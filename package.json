@@ -1,0 +1,23 @@
+{
+  "name": "plain-js-with-objects",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fsher07/plain-js-with-objects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fsher07/plain-js-with-objects/issues"
+  },
+  "homepage": "https://github.com/Fsher07/plain-js-with-objects#readme",
+  "devDependencies": {
+    "hint": "^6.1.10"
+  }
+}
