@@ -8,13 +8,6 @@ class UpdateDisplay {
     this.author = author;
   }
 
-  removeBook(bookitem, i) {
-    const bookBlock = document.getElementById(i);
-    books = books.filter((item) => item !== bookitem);
-    localStorage.setItem('bookInfo', JSON.stringify(books));
-    listSection.removeChild(bookBlock);
-  }
-
   static listSection = document.querySelector('.book-list');
 
   static bookTitle = document.querySelector('#title');
@@ -42,13 +35,14 @@ class UpdateDisplay {
       UpdateDisplay.addBookItem(bookItem, books.length - 1);
     }
   }
+
   static delBook(bookItem, pos) {
-    
     const bookBlock = document.getElementById(pos);
     books = books.filter((item) => item !== bookItem);
     localStorage.setItem('books', JSON.stringify(books));
     UpdateDisplay.listSection.removeChild(bookBlock);
   }
+
   static updateUi() {
     if (localStorage.getItem('books')) {
       books = JSON.parse(localStorage.getItem('books'));
@@ -60,6 +54,7 @@ class UpdateDisplay {
       books = [];
     }
   }
+
   static addBookItem(bookItem, pos) {
     const bookBlock = document.createElement('div');
     bookBlock.classList.add('bookDIV');
