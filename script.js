@@ -43,8 +43,8 @@ class UpdateDisplay {
     }
   }
   static delBook(bookItem, pos) {
-    const bookBlock = document.getElementById(pos);
     
+    const bookBlock = document.getElementById(pos);
     books = books.filter((item) => item !== bookItem);
     localStorage.setItem('books', JSON.stringify(books));
     UpdateDisplay.listSection.removeChild(bookBlock);
