@@ -8,12 +8,12 @@ class UpdateDisplay {
     this.author = author;
   }
 
-   removeBook(bookitem, i) {
+  removeBook(bookitem, i) {
     const bookBlock = document.getElementById(i);
     books = books.filter((item) => item !== bookitem);
     localStorage.setItem('bookInfo', JSON.stringify(books));
     listSection.removeChild(bookBlock);
-}
+  }
 
   static listSection = document.querySelector('.book-list');
 
@@ -34,10 +34,9 @@ class UpdateDisplay {
       UpdateDisplay.bookAuthor.value,
     );
 
-    if(UpdateDisplay.bookTitle.value && UpdateDisplay.bookAuthor.value != '') {
+    if (UpdateDisplay.bookTitle.value && UpdateDisplay.bookAuthor.value !== '') {
       books.push(bookItem);
       localStorage.setItem('books', JSON.stringify(books));
-  
       UpdateDisplay.bookAuthor.value = '';
       UpdateDisplay.bookTitle.value = '';
       UpdateDisplay.addBookItem(bookItem, books.length - 1);
@@ -45,6 +44,7 @@ class UpdateDisplay {
   }
   static delBook(bookItem, pos) {
     const bookBlock = document.getElementById(pos);
+    
     books = books.filter((item) => item !== bookItem);
     localStorage.setItem('books', JSON.stringify(books));
     UpdateDisplay.listSection.removeChild(bookBlock);
@@ -82,4 +82,3 @@ class UpdateDisplay {
 
 UpdateDisplay.updateUi();
 UpdateDisplay.formBtn.addEventListener('click', UpdateDisplay.addBooks);
-
