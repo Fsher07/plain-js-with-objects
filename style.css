@@ -93,14 +93,14 @@ body {
   display: block !important;
 }
 
-#footer {  
+#footer {
   position: fixed;  
   bottom: 0;  
   width: 100%;  
   background-color: white;
 }
 
-#footer p {  
+#footer p {
   margin: 0 20px 20px;  
   color: black;  
   font-size: 20px;  
@@ -110,58 +110,58 @@ body {
   font-weight: bold;
 }
 
-#footer span {  
+#footer span {
   font-style: italic;
 }
 
-#dateWrapper {  
+#dateWrapper {
   padding: 0;
 }
 
-.flex-container {  
+.flex-container {
   display: flex;  
   flex-direction: column;  
   justify-content: center;  
   align-items: center;
 }
 
-.section {  
+.section {
   display: flex;  
   flex-direction: column;  
   justify-content: center;  
   align-items: center;
 }
 
-#book-add-section {  
+#book-add-section {
   flex-direction: column;  
   width: 40%;
 }
 
-#formSection {  
+#formSection {
   display: flex;  
   flex-direction: column;  
   gap: 20px;
 }
 
-button {  
+button {
   border: 1px solid;  
   padding: 10px;  
   box-shadow: 5px 5px black;  
   font-weight: bold;
 }
 
-button:hover {  
+button:hover {
   background-color: rgba(114, 97, 97, 0.596);
 }
 
-#formSection button {  
+#formSection button {
   width: fit-content;  
   align-self: flex-end;  
   font-size: 18px;  
   padding: 5px;
 }
 
-#formSection input {  
+#formSection input {
   width: 100%;  
   padding: 5px;  
   border: 2px solid black;  
@@ -169,16 +169,16 @@ button:hover {
   font-size: 18px;
 }
 
-h1 {  
+h1 {
   text-align: center;  
   font-size: 30px;
 }
 
-#book-list-container {  
+#book-list-container {
   border: 2px solid black;
 }
 
-.bookDIV {  
+.bookDIV {
   display: flex;  
   justify-content: space-between;  
   align-items: center;  
@@ -186,11 +186,11 @@ h1 {
   font-weight: bold;
 }
 
-.bookDIV:nth-child(odd) {  
+.bookDIV:nth-child(odd) {
   background-color: rgb(170, 169, 169);
 }
 
-.listBtn.active {  
+.listBtn.active {
   color: blue;
 }
 
