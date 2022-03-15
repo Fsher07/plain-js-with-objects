@@ -1,15 +1,13 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Awesome Books
 
-# Project Name
-
-> Description the project.
+> Creating a library that we can add and remove books.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JavaScript
 
 ## Live Demo (if available)
 
