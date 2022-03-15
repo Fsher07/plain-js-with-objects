@@ -8,11 +8,11 @@ class UpdateDisplay {
     this.author = author;
   }
 
-function removeBook(bookitem, i) {
-  const bookBlock = document.getElementById(i);
-  books = books.filter((item) => item !== bookitem);
-  localStorage.setItem('bookInfo', JSON.stringify(books));
-  listSection.removeChild(bookBlock);
+   removeBook(bookitem, i) {
+    const bookBlock = document.getElementById(i);
+    books = books.filter((item) => item !== bookitem);
+    localStorage.setItem('bookInfo', JSON.stringify(books));
+    listSection.removeChild(bookBlock);
 }
 
   static listSection = document.querySelector('.book-list');
@@ -64,11 +64,14 @@ function removeBook(bookitem, i) {
     const bookBlock = document.createElement('div');
     bookBlock.classList.add('bookDIV');
     bookBlock.id = pos;
+
     const removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-btn');
+
     bookBlock.innerHTML = `
       <p class='book-title'>'${bookItem.author}'  by ${bookItem.title} </p>`;
     removeBtn.innerText = 'Remove';
+
     removeBtn.onclick = () => {
       UpdateDisplay.delBook(bookItem, pos);
     };
