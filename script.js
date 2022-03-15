@@ -7,7 +7,7 @@ const theForm = document.querySelector('form');
 
 function removeBook(bookitem, i) {
   const bookBlock = document.getElementById(i);
-  books = books.filter((item) => item !== bookitem); // 
+  books = books.filter((item) => item !== bookitem);
   localStorage.setItem('bookInfo', JSON.stringify(books));
   listSection.removeChild(bookBlock);
 }
