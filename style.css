@@ -93,103 +93,103 @@ body {
   display: block !important;
 }
 
-#footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+#footer {  
+  position: fixed;  
+  bottom: 0;  
+  width: 100%;  
   background-color: white;
 }
 
-#footer p {
-  margin: 0 20px 20px;
-  color: black;
-  font-size: 20px;
-  padding: 1rem;
-  padding-left: 2rem;
-  border: 2px solid black;
+#footer p {  
+  margin: 0 20px 20px;  
+  color: black;  
+  font-size: 20px;  
+  padding: 1rem;  
+  padding-left: 2rem;  
+  border: 2px solid black;  
   font-weight: bold;
 }
 
-#footer span {
+#footer span {  
   font-style: italic;
 }
 
-#dateWrapper {
+#dateWrapper {  
   padding: 0;
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.flex-container {  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
   align-items: center;
 }
 
-.section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.section {  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
   align-items: center;
 }
 
-#book-add-section {
-  flex-direction: column;
+#book-add-section {  
+  flex-direction: column;  
   width: 40%;
 }
 
-#formSection {
-  display: flex;
-  flex-direction: column;
+#formSection {  
+  display: flex;  
+  flex-direction: column;  
   gap: 20px;
 }
 
-button {
-  border: 1px solid;
-  padding: 10px;
-  box-shadow: 5px 5px black;
+button {  
+  border: 1px solid;  
+  padding: 10px;  
+  box-shadow: 5px 5px black;  
   font-weight: bold;
 }
 
-button:hover {
+button:hover {  
   background-color: rgba(114, 97, 97, 0.596);
 }
 
-#formSection button {
-  width: fit-content;
-  align-self: flex-end;
-  font-size: 18px;
+#formSection button {  
+  width: fit-content;  
+  align-self: flex-end;  
+  font-size: 18px;  
   padding: 5px;
 }
 
-#formSection input {
-  width: 100%;
-  padding: 5px;
-  border: 2px solid black;
-  font-weight: bold;
+#formSection input {  
+  width: 100%;  
+  padding: 5px;  
+  border: 2px solid black;  
+  font-weight: bold;  
   font-size: 18px;
 }
 
-h1 {
-  text-align: center;
+h1 {  
+  text-align: center;  
   font-size: 30px;
 }
 
-#book-list-container {
+#book-list-container {  
   border: 2px solid black;
 }
 
-.bookDIV {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
+.bookDIV {  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+  padding: 0 10px;  
   font-weight: bold;
 }
 
-.bookDIV:nth-child(odd) {
+.bookDIV:nth-child(odd) {  
   background-color: rgb(170, 169, 169);
 }
 
-.listBtn.active {
+.listBtn.active {  
   color: blue;
 }
