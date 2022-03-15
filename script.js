@@ -2,12 +2,18 @@
 let books;
 
 // create the book class
-
 class UpdateDisplay {
   constructor(author, title) {
     this.title = title;
     this.author = author;
   }
+
+function removeBook(bookitem, i) {
+  const bookBlock = document.getElementById(i);
+  books = books.filter((item) => item !== bookitem);
+  localStorage.setItem('bookInfo', JSON.stringify(books));
+  listSection.removeChild(bookBlock);
+}
 
   static listSection = document.querySelector('.book-list');
 
