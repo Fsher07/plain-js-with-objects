@@ -70,3 +70,7 @@ class UpdateDisplay {
     UpdateDisplay.listSection.appendChild(bookBlock);
   }
 }
+
+UpdateDisplay.updateUi();
+UpdateDisplay.formBtn.addEventListener('click', UpdateDisplay.addBooks);
+
