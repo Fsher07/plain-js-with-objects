@@ -1,69 +1,79 @@
-let books = [];
+// Initialize the books
+let books;
 
-const listSection = document.querySelector('.book-list');
-const bookTitle = document.querySelector('#title');
-const bookAuthor = document.querySelector('#author');
-const theForm = document.querySelector('form');
+// create the book class
+class UpdateDisplay {
+  constructor(author, title) {
+    this.title = title;
+    this.author = author;
+  }
 
-function removeBook(bookitem, i) {
-  const bookBlock = document.getElementById(i);
-  books = books.filter((item) => item !== bookitem);
-  localStorage.setItem('bookInfo', JSON.stringify(books));
-  listSection.removeChild(bookBlock);
-}
+  static listSection = document.querySelector('.book-list');
 
-function createBookItem(bookitem, i) {
-  const bookBlock = document.createElement('div');
-  bookBlock.classList.add('bookBlock');
-  bookBlock.id = i;
+  static bookTitle = document.querySelector('#title');
 
-  const removeBtn = document.createElement('button');
-  removeBtn.classList.add('remove-btn');
-  removeBtn.innerText = 'Remove';
+  static formBtn = document.querySelector('.btn-submit');
 
-  const underLine = document.createElement('hr');
+  static bookAuthor = document.querySelector('#author');
 
-  bookBlock.innerHTML = `<p class="book-title">${bookitem.title}</p>
-    <p class="book-Author">${bookitem.author}</p> `;
-  bookBlock.appendChild(removeBtn);
-  bookBlock.appendChild(underLine);
-  listSection.appendChild(bookBlock);
+  static listBtn = document.querySelectorAll('.listBtn');
 
-  removeBtn.onclick = () => {
-    removeBook(bookitem, i);
-  };
-}
+  static addActive= document.querySelectorAll('.section');
 
-function addBook(item) {
-  books.push({
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  });
+  // create new book
+  static addBooks() {
+    const bookItem = new UpdateDisplay(
+      UpdateDisplay.bookTitle.value,
+      UpdateDisplay.bookAuthor.value,
+    );
 
-  localStorage.setItem('bookInfo', JSON.stringify(books));
-  bookTitle.value = '';
-  bookAuthor.value = '';
-  createBookItem(item, (books.length - 1));
-}
+    if (UpdateDisplay.bookTitle.value && UpdateDisplay.bookAuthor.value !== '') {
+      books.push(bookItem);
+      localStorage.setItem('books', JSON.stringify(books));
+      UpdateDisplay.bookAuthor.value = '';
+      UpdateDisplay.bookTitle.value = '';
+      UpdateDisplay.addBookItem(bookItem, books.length - 1);
+    }
+  }
 
-function updateUI() {
-  if (localStorage.getItem('bookInfo')) {
-    books = JSON.parse(localStorage.getItem('bookInfo'));
-    books.forEach((bookitem, i) => {
-      createBookItem(bookitem, i);
-    });
-  } else {
-    localStorage.setItem('bookInfo', '');
-    books = [];
+  static delBook(bookItem, pos) {
+    const bookBlock = document.getElementById(pos);
+    books = books.filter((item) => item !== bookItem);
+    localStorage.setItem('books', JSON.stringify(books));
+    UpdateDisplay.listSection.removeChild(bookBlock);
+  }
+
+  static updateUi() {
+    if (localStorage.getItem('books')) {
+      books = JSON.parse(localStorage.getItem('books'));
+      books.forEach((bookItem, pos) => {
+        UpdateDisplay.addBookItem(bookItem, pos);
+      });
+    } else {
+      localStorage.setItem('books', '');
+      books = [];
+    }
+  }
+
+  static addBookItem(bookItem, pos) {
+    const bookBlock = document.createElement('div');
+    bookBlock.classList.add('bookDIV');
+    bookBlock.id = pos;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.classList.add('remove-btn');
+
+    bookBlock.innerHTML = `
+      <p class='book-title'>'${bookItem.author}'  by ${bookItem.title} </p>`;
+    removeBtn.innerText = 'Remove';
+
+    removeBtn.onclick = () => {
+      UpdateDisplay.delBook(bookItem, pos);
+    };
+    bookBlock.appendChild(removeBtn);
+    UpdateDisplay.listSection.appendChild(bookBlock);
   }
 }
 
-updateUI();
-
-theForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  addBook({
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  });
-});
+UpdateDisplay.updateUi();
+UpdateDisplay.formBtn.addEventListener('click', UpdateDisplay.addBooks);
