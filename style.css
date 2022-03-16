@@ -67,11 +67,11 @@ body {
   font-size: 20px;
 }
 
-/* #book-contact-section,
+#book-contact-section,
 #book-add-section,
 #book-list-section {
   display: none;
-} */
+}
 
 #book-list-section {
   position: relative;
