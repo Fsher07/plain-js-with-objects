@@ -11,7 +11,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://fsher07.github.io/plain-js-with-objects/)
 
 
 ## Getting Started
@@ -24,6 +24,10 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
+👤 **Salim**
+
+- GitHub: [@githubhandle](https://github.com/Fsher07)
+
 👤 **Said**
 
 - GitHub: [@githubhandle](https://github.com/SaidRasinlic)
@@ -31,11 +35,6 @@ To get a local copy up and running follow these simple example steps.
 👤 **Ben**
 
 - GitHub: [@githubhandle](https://github.com/Benmuiruri)
-
-👤 **Salim**
-
-- GitHub: [@githubhandle](https://github.com/Fsher07)
-
 
 ## 🤝 Contributing
 
