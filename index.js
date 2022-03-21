@@ -1,6 +1,5 @@
 import Book from './modules/BookClass.js';
-
-Book.updateUi();
+import { DateTime } from './modules/src/luxon.js';
 
 Book.listBtn.forEach((btn, i) => {
   btn.onclick = () => {
@@ -20,21 +19,11 @@ Book.listBtn.forEach((btn, i) => {
 
 Book.formBtn.addEventListener('click', Book.addBooks);
 
-const timeBox = document.querySelector('#date');
+const displayTime = () => {
+  document.getElementById('date').innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+  setInterval(displayTime, 1000);
+};
 
-function time() {
-  const date = new Date();
-  const locale = navigator.language;
-  const options = {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: 'false',
-  };
-  timeBox.textContent = `${date.toLocaleTimeString(locale, options)}`;
-}
+displayTime();
 
-setInterval(time, 1000);
+Book.updateUi();
